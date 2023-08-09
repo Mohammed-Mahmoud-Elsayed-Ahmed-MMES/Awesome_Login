@@ -1,0 +1,465 @@
+/* start Global Rules */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(0, 0%, 0%);
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Poppins", sans-serif;
+    --h1-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .813rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --c-lightblue: #0f7fc9;
+}
+/* 
+NOTICE: THE PROPERTIES OF CLASSES LIKE allUser AND  allPassword
+WE WILL PUT WITH THEM THESE NEW CLASSES main success AND main error
+TO MAKE THEM HAVE THE SAME PROPERTIES OF allUser AND  allPassword
+BECAUSE WHEN WE SWITCH THEM THE PROPERTIES DO NOT CHANGE
+*/
+/*=============== BASE ===============*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    opacity: 90%;
+    color: var(--white-color);
+    /* background: linear-gradient(#141e30,#243b55) */
+}
+body,
+input,
+button {
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* End Global Rules */
+.container {
+    /* position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    width: 400px;       /* to enable (from top to trasform) i canceled .shadow-pop-br properities */
+    /* padding: 40px;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px; */
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+
+@media (max-width: 365px) {
+    .container {
+        height: 150vh;
+    }
+
+}
+
+/* Image */
+.login__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Form */
+form {
+    position: absolute;
+    width: 25%;
+    left: 47.5%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: hsla(0, 0%, 10%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 850px) {
+    form {
+        width: 50%;
+        left: 50%;
+    }
+}
+@media (max-width: 767px) {
+    form {
+        width: 80%;
+        left: 45%;
+    }
+}
+@media (max-width: 400px) {
+    form {
+        width: 75%;
+    }
+}
+@media (max-width: 380px) {
+    form {
+        width: 80%;
+    }
+}
+
+/* h2 */
+h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #3a6494;
+    text-align: center;
+    font-size: 30px;
+}
+
+.allUser,
+.allPassword,
+.main.success,
+.main.error {
+    position: relative;
+}
+.login__icon, .login__eye {
+    font-size: 1.25rem;
+}
+.login__eye {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
+}
+/* Input */
+#username,
+#password {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+/* Label */
+.allUser label,
+.allPassword label,
+.main.success label,
+.main.error label {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color:#3a6494;
+    font-weight: var(--font-medium);
+    pointer-events: none;
+    transition: 0.5s;
+    transition: top 0.3s, font-size 0.3s;
+}    
+.allUser label i,
+.allPassword label i,
+.main.success label i,
+.main.error label i{
+    color: black;
+    padding-right: 1vh;
+}
+
+.input-eye {
+    display: flex;
+    flex-direction: row;
+}
+.input-eye #login-eye {
+    position: absolute;
+    right: 0;
+    color: #191919;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.main.success #login-eye,
+.main.error #login-eye{
+    position: absolute;
+    right: 0px;
+}
+
+.main.success .fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.main.error .fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.main small {
+	color: #e74c3c;
+	position: relative;
+	visibility: hidden;
+}
+
+.main.error small {
+	visibility: visible;
+}
+
+/* sumbitButton */
+
+.container form .sumbitButton {
+    position: relative;
+    /* display: inline-block; */
+    display: grid;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--c-lightblue);
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin: 20px 0;
+    letter-spacing: 4px;
+}
+
+.container form .sumbitButton:hover {
+    background: var(--c-lightblue);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--c-lightblue),
+        0 0 25px var(--c-lightblue),
+        0 0 50px var(--c-lightblue),
+        0 0 100px var(--c-lightblue);
+}
+
+/* sumbit */
+
+#submit {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+/* Span */
+
+.container .sumbitButton span {
+    position: absolute;
+    display: block;
+}
+.container .sumbitButton span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,var(--c-lightblue));
+    animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+.container .sumbitButton span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,var(--c-lightblue));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+.container .sumbitButton span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,var(--c-lightblue));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+.container .sumbitButton span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,var(--c-lightblue));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
+
+/* remember,forgot,register */
+
+.login__check, .login__check-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 42.5px;
+}
+.login__check {
+    margin-bottom: 1.5rem;
+}
+.login__check-label, .login__forgot, .login__register {
+    font-size: var(--small-font-size);
+}
+.login__check-group {
+    column-gap: 0.5rem;
+}
+.login__check-input {
+    width: 16px;
+    height: 16px;
+}
+.login__forgot {
+    color: var(--white-color);
+}
+.login__forgot:hover {
+    text-decoration: underline;
+}
+.login__register {
+    text-align: center;
+}
+.login__register a {
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+}
+.login__register a:hover {
+    text-decoration: underline;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+/* @media screen and (min-width: 576px) {
+    .login {
+        justify-content: center;
+    }
+    form {
+        width: 432px;
+        padding: 4rem 3rem 3.5rem;
+        border-radius: 1.5rem;
+    }
+    .login__title {
+        font-size: 2rem;
+    }
+} */
+/* old thoughts */
+/* h2 */
+/* h2 {
+    font-size: 3em;
+    margin: 0.67em 125px;
+} */
+/* Login box */
+/* .shadow-pop-br {
+    margin: 10% 40%;
+    width: 370px;
+    height: 380px;
+    background-color: var(--c-blacklight);
+    border: 2px solid var(--c-bluelight);
+    transition: all 0.3s ease-in-out;
+} */
+/* Label */
+/* label {
+    font-size: 1.5em;
+    margin-left: 15px;
+} */
+/* label:hover {
+    cursor: pointer;
+    color: var(--c-active-inner);
+} */
+/* User Name */
+/* #username {
+    margin: 5px 25px;
+    padding-right: 35px;
+    padding-bottom: 5px;
+} */
+/* #username:hover {
+    background-color: var(--c-blacklight);
+} */
+/* .allUser label:hover {
+    background-color: var(--c-blacklight);
+    margin-top: 10px;
+} */
+/* Password */
+/* #password {
+    margin: 5px 25px;
+    padding-right: 35px;
+    padding-bottom: 5px;
+} */
+/* Submit */
+/* #submit {
+    margin: 30px 0px 0px 230px;
+    padding: 5px;
+    border: 2px solid; 
+    border-color: var(--c-bluelight); 
+    transition: all 0.3s ease-in-out;
+    /* font-weight: bolder; 
+    font-size: larger;
+} */
+
+/* #submit:hover {
+    border-color: var(--c-bluelight);
+    cursor: pointer;
+} */

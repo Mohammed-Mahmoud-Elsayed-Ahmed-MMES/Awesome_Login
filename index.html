@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/master.css">
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="CSS/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <!-- Animation library from web called Animate.style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container shadow-pop-br">
+      <video autoplay muted loop alt="login image" class="login__img">
+        <source src="Video/Blue Magical Tree In The Ocean Live Wallpaper.mp4" type="video/mp4"  />
+      </video>
+        
+    
+        <form action="" method="" id="form">
+          <h2>Login</h2>
+          <div class="allUser">
+            <label for="username" class="user">
+              <i class="fa-solid fa-user"></i>Username
+            </label><br />
+            <br />
+            <input type="text" required placeholder=" " name="username" id="username" class="login__input"/>
+            <i class="fas fa-check-circle"></i>
+			      <i class="fas fa-exclamation-circle"></i>
+			      <small></small>
+            <br /><br />
+          </div>
+
+          <div class="allPassword">
+            <label for="password" class="pass">
+              <i class="fa-solid fa-lock"></i>Password
+            </label><br />
+            <br />
+            <div class="input-eye">
+              <input type="password" required name="password" id="password" class="login__input"/>
+              <i class="fa-solid fa-eye-slash" id="login-eye"></i>
+              <!-- <i class="fa-solid fa-eye"></i> -->
+            </div>
+            <i class="fas fa-check-circle"></i>
+			      <i class="fas fa-exclamation-circle"></i>
+			      <small></small>
+            <br />
+          </div><br />
+
+          <div class="login__check">
+            <div class="login__check-group">
+              <input type="checkbox" class="login__check-input">
+              <label for="" class="login__check-label">Remember me</label>
+            </div>
+            <a href="#" class="login__forgot">Forgot Password?</a>
+          </div>
+
+          <div class="sumbitButton">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="submit" value="Login" id="submit" />
+          </div>
+          <p class="login__register">
+            Don't have an account? <a href="#">Register</a>
+          </p>
+
+        </form>
+
+      </div>
+      <script src="JS/js1.js"></script>
+</body>
+</html>
